@@ -1,0 +1,44 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ucionice:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ucionice_jar</output-path>
+    <root id="archive" name="ucionice.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="ucionice.main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.3.61/70dffc5f8ac5ea7c34f30deac5b9d8b1d48af066/kotlin-stdlib-jdk7-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.4.25.v20191220/bee77d6a4f87dc90d5bc142cbd6cef470ec46aae/jetty-servlet-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-client/9.4.25.v20191220/3c20f5d2f63767f7809d39c405e133647aa6fce1/websocket-client-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.61/4702105e97f7396ae41b113fdbdc180ec1eb1e36/kotlin-stdlib-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-jdbc/5.1/8c5fac7d12ee7d3c82a4eb01534779fc66f75d4a/ormlite-jdbc-5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.28/cf5f2cf3c31e0e41b68d932d756398a1238d4456/slf4j-simple-1.7.28.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.4.25.v20191220/d9f0c70493252c7cf9b2952b88051c999cf9f53c/jetty-webapp-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.javalin/javalin/3.7.0/a357d0953f52691f2a7d1b6037174ed6592c6de1/javalin-3.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.50/b499f22fd7c3e9c2e5b6c4005221fa47fc7f9a7a/kotlin-reflect-1.3.50.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.4.25.v20191220/fd8b642cc16728f1c36ca6a64653cb1b26ec0232/jetty-util-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.4.25.v20191220/697a266475607faf3633cea196654feaf40a2ff8/jetty-xml-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-api/9.4.25.v20191220/214deebd21e03eff107d2c2540d70770c154bc1e/websocket-api-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-core/5.1/bf7a747016c99ac01577d3268a4ac9c24e94d5de/ormlite-core-5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.4.25.v20191220/5b352c9f9135a1c20e4808e5cb1d84fbddfdc460/jetty-server-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.10.1/dbf6b074958ba8d80bc9552e7690bbbfe7ad79d3/jackson-module-kotlin-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.auth0/java-jwt/3.9.0/93afe82f15d7b3ca4d895ed8d87a94756bec92c/java-jwt-3.9.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.61/65abb71d5afb850b68be03987b08e2c864ca3110/kotlin-stdlib-common-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-client/9.4.25.v20191220/a845f43d3b5bb457866a8e0c2f728c388e181a0a/jetty-client-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.4.25.v20191220/593ff5b5dfd5bf973184329f5d1209b9a411ec12/jetty-security-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.12/47a28ef1ed31eb182b44e15d49300dee5fadcf6a/commons-codec-1.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.10.1/18eee15ffc662d27538d5b6ee84e4c92c0a9d03e/jackson-databind-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.3.61/e91d61b7cfd9a45566b580fef18bbd5c32d505b5/kotlin-stdlib-jdk8-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xerial/sqlite-jdbc/3.30.1/456f2e23fd0e6a615db6e738b01b9d69456d738c/sqlite-jdbc-3.30.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.10.1/2c8b5e26ba40e5f91eb37a24075a2028b402c5f9/jackson-core-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.4.25.v20191220/c3aa7da362f1a492667ce754ba16b2535b793668/jetty-http-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.28/2cd9b264f76e3d087ee21bfc99305928e1bdb443/slf4j-api-1.7.28.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-servlet/9.4.25.v20191220/faf031394980ae052eab38374e564b61fe35ea81/websocket-servlet-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-common/9.4.25.v20191220/98c31c8baf4b20aea05d5a20d8dcdcd65bad2204/websocket-common-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.10.1/54d72475c0d6819f2d0e9a09d25c3ed876a4972f/jackson-annotations-2.10.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.websocket/websocket-server/9.4.25.v20191220/642fea5ce3946ba3654d27b516c2315a0d939f7c/websocket-server-9.4.25.v20191220.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.4.25.v20191220/3eb34b5481012701de0ea9dfaf2bdf1dbb947b16/jetty-io-9.4.25.v20191220.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
