@@ -1,5 +1,9 @@
 package com.ivanmarincic.ucionice.util
 
+import com.ivanmarincic.ucionice.model.User
+import io.javalin.Javalin
+import io.javalin.apibuilder.EndpointGroup
+import io.javalin.http.Context
 import java.math.BigInteger
 import java.security.SecureRandom
 import javax.crypto.SecretKeyFactory
@@ -55,4 +59,29 @@ fun validatePassword(password: String, hashedPassword: String): Boolean {
         i++
     }
     return diff == 0
+}
+
+fun Javalin.routes(vararg groups: EndpointGroup): Javalin {
+    groups.forEach {
+        this.routes(it)
+    }
+    return this
+}
+
+fun Context.authenticatedUser(): User? {
+    return this.sessionAttribute("user")
+}
+
+
+private const val AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+fun randomString(len: Int): String {
+    val random = SecureRandom()
+    val sb = StringBuilder(len)
+    for (i in 0 until len) sb.append(AB[random.nextInt(AB.length)])
+    return sb.toString()
+}
+
+fun sendEmail() {
+
 }

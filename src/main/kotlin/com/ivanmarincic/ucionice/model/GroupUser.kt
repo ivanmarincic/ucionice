@@ -1,12 +1,13 @@
 package com.ivanmarincic.ucionice.model
 
 import com.ivanmarincic.ucionice.UserRole
+import com.ivanmarincic.ucionice.dao.GroupUserDao
 import com.ivanmarincic.ucionice.dao.UsersDao
 import com.j256.ormlite.field.DatabaseField
 import com.j256.ormlite.field.types.EnumIntegerType
 import com.j256.ormlite.table.DatabaseTable
 
-@DatabaseTable(tableName = "group_users")
+@DatabaseTable(tableName = "group_users", daoClass = GroupUserDao::class)
 data class GroupUser(
     @DatabaseField(index = true, generatedId = true)
     var id: Int = 0,

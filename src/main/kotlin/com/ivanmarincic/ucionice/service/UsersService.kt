@@ -46,21 +46,19 @@ class UsersService {
             .verify(token)
     }
 
-    fun login(authenticationRequest: AuthenticationRequest): CompletableFuture<AuthenticationResponse> {
-        return futureOf(Supplier {
-            val user = usersDao.getByEmail(authenticationRequest.email)
-            user?.let {
-                if (!validatePassword(authenticationRequest.password, user.password)) {
-                    throw AuthenticationFailedException()
-                }
-                val expiration = Date.from(Instant.now().plus(1, ChronoUnit.DAYS))
-                return@Supplier AuthenticationResponse(
-                    createToken(user, expiration),
-                    expiration,
-                    it
-                )
-            } ?: throw AuthenticationFailedException()
-        })
+    fun login(authenticationRequest: AuthenticationRequest): AuthenticationResponse {
+        val user = usersDao.getByEmail(authenticationRequest.email)
+        user?.let {
+            if (!validatePassword(authenticationRequest.password, user.password)) {
+                throw AuthenticationFailedException()
+            }
+            val expiration = Date.from(Instant.now().plus(1, ChronoUnit.DAYS))
+            return AuthenticationResponse(
+                createToken(user, expiration),
+                expiration,
+                it
+            )
+        } ?: throw AuthenticationFailedException()
     }
 
     fun register(user: User): CompletableFuture<User> {
