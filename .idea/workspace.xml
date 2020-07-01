@@ -277,7 +277,7 @@
       <workItem from="1593345023801" duration="6959000" />
       <workItem from="1593539733109" duration="1105000" />
       <workItem from="1593548256786" duration="5595000" />
-      <workItem from="1593609836071" duration="3052000" />
+      <workItem from="1593609836071" duration="3403000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1581072754676</created>
@@ -307,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593612860157</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="dokumentacija">
+      <created>1593613306040</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593613306040</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,10 +352,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1588099809113" />
-    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593612865582">
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593613312853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612865582" />
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593613312853" />
     <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -381,10 +388,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593612861228">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593613308428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612861228" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593613308428" />
     <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1587066367939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
