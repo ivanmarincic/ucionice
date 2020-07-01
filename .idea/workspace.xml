@@ -24,26 +24,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc8d857-a260-44de-b47b-83172bdc1796" name="Default Changelist" comment="fixes">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/UserController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/RoleRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/AppointmentController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/AppointmentController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/AuthenticationController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/AuthenticationController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/ClassroomController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/ClassroomController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/GroupController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/GroupController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/AppointmentDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/AppointmentDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/ClassroomDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/ClassroomDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/GroupDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/GroupDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/GroupInvitationDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/GroupInvitationDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/GroupUserDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/GroupUserDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/Appointment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/Appointment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/GroupInvitation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/GroupInvitation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/GroupUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/GroupUser.kt" afterDir="false" />
+    <list default="true" id="7cc8d857-a260-44de-b47b-83172bdc1796" name="Default Changelist" comment="release">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/AppointmentsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/AppointmentsService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/GroupsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/GroupsService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/UsersService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/UsersService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/util/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/util/Helpers.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,6 +281,7 @@
       <workItem from="1593345023801" duration="6959000" />
       <workItem from="1593539733109" duration="1105000" />
       <workItem from="1593548256786" duration="5595000" />
+      <workItem from="1593609836071" duration="2713000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1581072754676</created>
@@ -309,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587067087550</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="release">
+      <created>1593609897758</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593609897758</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +325,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
+    <MESSAGE value="release" />
+    <option name="LAST_COMMIT_MESSAGE" value="release" />
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="226" width="725" height="587" key="#xdebugger.evaluate" timestamp="1593555031426">
@@ -345,42 +341,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1588099809113" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1593556554642">
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593609904403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554642" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1593556554642">
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593609904403" />
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554642" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1593556554642">
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.center" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554642" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1593556554642">
+    <state width="1877" height="344" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.left" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554642" />
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1593556554632">
+    <state width="1877" height="344" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
+    <state width="1877" height="344" key="GridCell.Tab.0.right" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554632" />
-    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1593556554631">
+    <state width="1877" height="344" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1593612353825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554631" />
-    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1593556554630">
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1593612353825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554630" />
-    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1593556554632">
+    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593556554632" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1587067089358">
+    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1593612353825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1587067089358" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593609900204">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593609900204" />
     <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1587066367939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

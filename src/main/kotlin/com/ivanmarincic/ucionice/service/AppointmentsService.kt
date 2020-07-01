@@ -74,6 +74,8 @@ class AppointmentsService {
             query
                 .orderBy("start_date", true)
                 .where()
+                .eq("approved" , true)
+                .and()
                 .ge("start_date", now)
                 .or()
                 .ge("end_date", now)
