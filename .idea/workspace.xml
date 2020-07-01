@@ -24,14 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc8d857-a260-44de-b47b-83172bdc1796" name="Default Changelist" comment="release">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/AppointmentsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/AppointmentsService.kt" afterDir="false" />
-    </list>
+    <list default="true" id="7cc8d857-a260-44de-b47b-83172bdc1796" name="Default Changelist" comment="dokumentacija" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +96,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Php/Mido4you" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -120,6 +113,9 @@
       <recent name="com.ivanmarincic.ucionice.service" />
       <recent name="com.ivanmarincic.ucionice.util.exceptions" />
       <recent name="com.ivanmarincic.ucionice.dao" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Workspace\Kotlin\ucionice" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Workspace\Kotlin\ucionice" />
@@ -281,7 +277,7 @@
       <workItem from="1593345023801" duration="6959000" />
       <workItem from="1593539733109" duration="1105000" />
       <workItem from="1593548256786" duration="5595000" />
-      <workItem from="1593609836071" duration="2713000" />
+      <workItem from="1593609836071" duration="3052000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1581072754676</created>
@@ -304,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593609897758</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dokumentacija">
+      <created>1593612860157</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593612860157</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +329,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="fixes" />
     <MESSAGE value="release" />
-    <option name="LAST_COMMIT_MESSAGE" value="release" />
+    <MESSAGE value="dokumentacija" />
+    <option name="LAST_COMMIT_MESSAGE" value="dokumentacija" />
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="226" width="725" height="587" key="#xdebugger.evaluate" timestamp="1593555031426">
@@ -341,10 +345,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1588099809113" />
-    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593609904403">
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593612865582">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593609904403" />
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612865582" />
     <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1593612353824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -377,10 +381,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593609900204">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593612861228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593609900204" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612861228" />
     <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1587066367939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
