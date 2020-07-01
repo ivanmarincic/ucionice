@@ -10,7 +10,7 @@ class AppointmentDao(connectionSource: ConnectionSource) :
 
     fun getUnapproved(): List<Appointment> {
         return queryBuilder()
-            .orderBy("startDate", true)
+            .orderBy("start_date", true)
             .where()
             .eq("approved", false)
             .query()
@@ -19,33 +19,49 @@ class AppointmentDao(connectionSource: ConnectionSource) :
     fun getOngoing(): List<Appointment> {
         val now = Date()
         return queryBuilder()
-            .orderBy("startDate", true)
+            .orderBy("start_date", true)
             .where()
-            .ge("startDate", now)
+            .ge("start_date", now)
             .or()
-            .ge("endDate", now)
+            .ge("end_date", now)
             .query()
     }
 
     fun getOngoingByClassroom(classroom: Int): List<Appointment> {
         val now = Date()
         return queryBuilder()
-            .orderBy("startDate", true)
+            .orderBy("start_date", true)
             .where()
-            .ge("startDate", now)
+            .ge("start_date", now)
             .and()
             .eq("classroom_id", classroom)
             .query()
     }
 
-    fun getConflictingAppointments(startDate: Date, endDate: Date): List<Appointment> {
+    fun getOngoingByUser(user: Int): List<Appointment> {
+        val now = Date()
         return queryBuilder()
-            .orderBy("startDate", true)
+            .orderBy("start_date", true)
             .where()
-            .eq("approved", true)
-            .or(queryBuilder().where().ge("startDate", startDate).and().le("endDate", endDate),
-                queryBuilder().where().ge("startDate", endDate).and().le("endDate", endDate))
+            .ge("start_date", now)
+            .and()
+            .eq("user_id", user)
             .query()
+    }
+
+    fun getConflictingAppointments(startDate: Date, endDate: Date): List<Appointment> {
+        val query = queryBuilder()
+            .orderBy("start_date", true)
+        val where = query.where()
+        where.eq("approved", true)
+        where.and(
+            where,
+            where.or(
+                where.ge("start_date", startDate).and().le("end_date", endDate),
+                where.ge("start_date", endDate).and().le("end_date", endDate)
+            )
+        )
+        return query.query()
     }
 
     fun request(appointment: Appointment): Appointment {
@@ -56,6 +72,12 @@ class AppointmentDao(connectionSource: ConnectionSource) :
 
     fun approve(appointment: Appointment): Appointment {
         appointment.approved = true
+        update(appointment)
+        return appointment
+    }
+
+    fun cancel(appointment: Appointment): Appointment {
+        appointment.approved = false
         update(appointment)
         return appointment
     }

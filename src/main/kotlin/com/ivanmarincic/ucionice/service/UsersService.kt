@@ -4,10 +4,9 @@ import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
 import com.auth0.jwt.interfaces.DecodedJWT
 import com.ivanmarincic.ucionice.Application
+import com.ivanmarincic.ucionice.dao.GroupUserDao
 import com.ivanmarincic.ucionice.dao.UsersDao
-import com.ivanmarincic.ucionice.model.AuthenticationRequest
-import com.ivanmarincic.ucionice.model.AuthenticationResponse
-import com.ivanmarincic.ucionice.model.User
+import com.ivanmarincic.ucionice.model.*
 import com.ivanmarincic.ucionice.util.exceptions.AuthenticationFailedException
 import com.ivanmarincic.ucionice.util.exceptions.AuthorizationFailedException
 import com.ivanmarincic.ucionice.util.exceptions.UserExistsException
@@ -25,6 +24,7 @@ import java.util.function.Supplier
 
 class UsersService {
     private val usersDao: UsersDao = DaoManager.createDao(Application.connectionSource, User::class.java)
+    private val groupUserDao: GroupUserDao = DaoManager.createDao(Application.connectionSource, GroupUser::class.java)
     private val algorithm = Algorithm.HMAC256("Ucionice123")
     private val issuer = "Ucionice"
 
@@ -82,5 +82,11 @@ class UsersService {
         } catch (e: Exception) {
             throw AuthorizationFailedException()
         }
+    }
+
+    fun findUsers(query: String, group: Group): List<User> {
+        val usersQuery = usersDao.queryBuilder()
+        usersQuery.where().like("name", "%$query%")
+        return usersQuery.distinct().query()
     }
 }

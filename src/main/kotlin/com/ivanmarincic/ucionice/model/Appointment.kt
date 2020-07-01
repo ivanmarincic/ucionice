@@ -9,9 +9,9 @@ import java.util.*
 data class Appointment(
     @DatabaseField(index = true, generatedId = true)
     var id: Int = 0,
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     var classroom: Classroom = Classroom(),
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     var user: User = User(),
     @DatabaseField(columnName = "start_date")
     var startDate: Date = Date(),

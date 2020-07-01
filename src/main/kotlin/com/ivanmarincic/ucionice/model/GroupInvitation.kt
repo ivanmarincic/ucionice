@@ -9,9 +9,9 @@ import com.j256.ormlite.table.DatabaseTable
 data class GroupInvitation(
     @DatabaseField(index = true, generatedId = true)
     var id: Int = 0,
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     var group: Group = Group(),
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     var user: User = User(),
     @DatabaseField
     var token: String = ""

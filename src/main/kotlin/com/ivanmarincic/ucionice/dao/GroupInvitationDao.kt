@@ -13,4 +13,11 @@ class GroupInvitationDao(connectionSource: ConnectionSource) :
             .eq("token", token)
             .queryForFirst()
     }
+
+    fun getByUser(user: Int): List<GroupInvitation> {
+        return queryBuilder()
+            .where()
+            .eq("user_id", user)
+            .query()
+    }
 }

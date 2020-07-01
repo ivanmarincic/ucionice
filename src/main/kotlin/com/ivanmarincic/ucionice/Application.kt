@@ -27,6 +27,7 @@ import org.eclipse.jetty.server.session.DefaultSessionCache
 import org.eclipse.jetty.server.session.FileSessionDataStore
 import org.eclipse.jetty.server.session.SessionHandler
 import java.io.File
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -112,11 +113,11 @@ fun getOpenApiPluginOptions(): OpenApiOptions {
 
 fun main(args: Array<String>) {
     setupDatabase()
-    JavalinJackson.configure(ObjectMapper().registerModule(KotlinModule()))
+    JavalinJackson.configure(ObjectMapper().registerModule(KotlinModule()).setDateFormat(SimpleDateFormat("yyyy-MM-dd HH:mm")))
     Javalin
         .create {
             it.accessManager(::authorizeRequest)
-            it.contextPath = "/ucionice"
+            it.contextPath = "/ucionice/api"
             it.registerPlugin(OpenApiPlugin(getOpenApiPluginOptions()))
             it.sessionHandler { fileSessionHandler() }
             it.enableCorsForAllOrigins()
@@ -125,6 +126,7 @@ fun main(args: Array<String>) {
             AuthenticationController(),
             AppointmentController(),
             ClassroomController(),
+            UserController(),
             GroupController(),
             GroupSettingsController()
         )

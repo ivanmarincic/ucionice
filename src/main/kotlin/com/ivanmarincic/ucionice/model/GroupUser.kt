@@ -11,9 +11,9 @@ import com.j256.ormlite.table.DatabaseTable
 data class GroupUser(
     @DatabaseField(index = true, generatedId = true)
     var id: Int = 0,
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     var group: Group = Group(),
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, foreignAutoRefresh = true)
     var user: User = User(),
     @DatabaseField(persisterClass = EnumIntegerType::class)
     var role: UserRole = UserRole.ANYONE

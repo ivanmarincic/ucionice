@@ -2,19 +2,20 @@ package com.ivanmarincic.ucionice.service
 
 import com.ivanmarincic.ucionice.Application
 import com.ivanmarincic.ucionice.dao.AppointmentDao
-import com.ivanmarincic.ucionice.model.Appointment
-import com.ivanmarincic.ucionice.model.AppointmentMoveRequest
-import com.ivanmarincic.ucionice.model.AppointmentRequest
-import com.ivanmarincic.ucionice.model.User
+import com.ivanmarincic.ucionice.dao.ClassroomDao
+import com.ivanmarincic.ucionice.model.*
 import com.ivanmarincic.ucionice.util.exceptions.ConflictingAppointmentsException
 import com.ivanmarincic.ucionice.util.futureOf
 import com.j256.ormlite.dao.DaoManager
+import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.function.Supplier
 
 class AppointmentsService {
     private val appointmentDao: AppointmentDao =
         DaoManager.createDao(Application.connectionSource, Appointment::class.java)
+    private val classroomDao: ClassroomDao =
+        DaoManager.createDao(Application.connectionSource, Classroom::class.java)
 
     fun getUnapproved(): CompletableFuture<List<Appointment>> {
         return futureOf(Supplier {
@@ -40,6 +41,12 @@ class AppointmentsService {
         })
     }
 
+    fun cancel(appointment: Appointment): CompletableFuture<Appointment> {
+        return futureOf(Supplier {
+            appointmentDao.cancel(appointment)
+        })
+    }
+
     fun move(appointmentMoveRequest: AppointmentMoveRequest): CompletableFuture<Appointment> {
         return futureOf(Supplier {
             if (appointmentDao.getConflictingAppointments(
@@ -58,21 +65,59 @@ class AppointmentsService {
         })
     }
 
-    fun getOngoing(): CompletableFuture<List<Appointment>> {
+    fun getOngoing(group: Group): CompletableFuture<List<Appointment>> {
         return futureOf(Supplier {
-            appointmentDao.getOngoing()
+            val now = Date()
+            val classroomJoin = classroomDao.queryBuilder()
+            classroomJoin.where().eq("group_id", group.id)
+            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
+            query
+                .orderBy("start_date", true)
+                .where()
+                .ge("start_date", now)
+                .or()
+                .ge("end_date", now)
+                .query()
         })
     }
 
-    fun getAll(): CompletableFuture<List<Appointment>> {
+    fun getAll(group: Group): CompletableFuture<List<Appointment>> {
         return futureOf(Supplier {
-            appointmentDao.queryForAll()
+            val classroomJoin = classroomDao.queryBuilder()
+            classroomJoin.where().eq("group_id", group.id)
+            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
+            query.query()
         })
     }
 
-    fun getOngoingByClassroom(classroom: Int): CompletableFuture<List<Appointment>> {
+    fun getOngoingByClassroom(classroom: Int, group: Group): CompletableFuture<List<Appointment>> {
         return futureOf(Supplier {
-            appointmentDao.getOngoingByClassroom(classroom)
+            val now = Date()
+            val classroomJoin = classroomDao.queryBuilder()
+            classroomJoin.where().eq("group_id", group.id)
+            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
+            query.orderBy("start_date", true)
+                .where()
+                .ge("start_date", now)
+                .and()
+                .eq("classroom_id", classroom)
+                .query()
+        })
+    }
+
+    fun getOngoingByUser(user: Int, group: Group): CompletableFuture<List<Appointment>> {
+        return futureOf(Supplier {
+            val now = Date()
+            val classroomJoin = classroomDao.queryBuilder()
+            classroomJoin.where().eq("group_id", group.id)
+            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
+            query
+                .orderBy("start_date", true)
+                .where()
+                .ge("start_date", now)
+                .and()
+                .eq("user_id", user)
+                .query()
         })
     }
 }

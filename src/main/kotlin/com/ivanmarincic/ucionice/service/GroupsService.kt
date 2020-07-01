@@ -16,8 +16,8 @@ class GroupsService {
     private val groupInvitationDao: GroupInvitationDao =
         DaoManager.createDao(Application.connectionSource, GroupInvitation::class.java)
 
-    fun allForUser(user: User): List<Group> {
-        return groupsDao.allForUser(user)
+    fun allForUser(user: User): List<GroupUser> {
+        return groupUserDao.allForUser(user)
     }
 
     fun create(group: Group, user: User): GroupUser {
@@ -34,6 +34,28 @@ class GroupsService {
     fun getByGroupAndUser(id: Int, user: User): GroupUser? {
         return groupUserDao
             .getByGroupAndUser(id, user.id)
+    }
+
+    fun getByUsersByGroup(group: Group): List<GroupUser> {
+        return groupUserDao
+            .allForGroup(group.id)
+    }
+
+    fun setUserRole(roleRequest: RoleRequest, group: Group): GroupUser {
+        if (roleRequest.role == UserRole.USER || roleRequest.role == UserRole.MANAGER) {
+            return groupUserDao
+                .setRole(roleRequest.role, roleRequest.user.id, group.id)
+        }
+        throw Exception()
+    }
+
+    fun removeUser(user: User, group: Group) {
+        groupUserDao
+            .removeFromGroup(user.id, group.id)
+    }
+
+    fun leaveGroup(groupUser: GroupUser) {
+        groupUserDao.delete(groupUser)
     }
 
     fun createInvitation(group: Group, user: User): GroupInvitation {
@@ -59,8 +81,13 @@ class GroupsService {
                 role = UserRole.USER
             )
             groupUserDao.create(groupUser)
+            groupInvitationDao.delete(invitation)
             return groupUser
         }
         throw InvalidInvitationException()
+    }
+
+    fun userInvitations(user: User): List<GroupInvitation> {
+        return groupInvitationDao.getByUser(user.id)
     }
 }

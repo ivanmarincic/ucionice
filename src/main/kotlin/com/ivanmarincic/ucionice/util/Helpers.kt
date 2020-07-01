@@ -1,5 +1,6 @@
 package com.ivanmarincic.ucionice.util
 
+import com.ivanmarincic.ucionice.model.GroupUser
 import com.ivanmarincic.ucionice.model.User
 import io.javalin.Javalin
 import io.javalin.apibuilder.EndpointGroup
@@ -70,6 +71,10 @@ fun Javalin.routes(vararg groups: EndpointGroup): Javalin {
 
 fun Context.authenticatedUser(): User? {
     return this.sessionAttribute("user")
+}
+
+fun Context.selectedGroup(): GroupUser? {
+    return this.attribute("group")
 }
 
 

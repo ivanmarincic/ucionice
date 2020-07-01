@@ -6,6 +6,7 @@ import com.ivanmarincic.ucionice.model.AppointmentMoveRequest
 import com.ivanmarincic.ucionice.model.AppointmentRequest
 import com.ivanmarincic.ucionice.service.AppointmentsService
 import com.ivanmarincic.ucionice.util.authenticatedUser
+import com.ivanmarincic.ucionice.util.selectedGroup
 import io.javalin.apibuilder.ApiBuilder.*
 import io.javalin.apibuilder.EndpointGroup
 import io.javalin.http.Context
@@ -21,10 +22,12 @@ class AppointmentController : EndpointGroup {
         path("/appointments") {
             post("/request", ::request, setOf(UserRole.USER))
             post("/approve", ::approve, setOf(UserRole.MANAGER, UserRole.OWNER))
+            post("/cancel", ::cancel, setOf(UserRole.MANAGER, UserRole.OWNER))
             post("/move", ::move, setOf(UserRole.MANAGER, UserRole.OWNER))
             get("/ongoing", ::ongoing, setOf(UserRole.USER, UserRole.MANAGER, UserRole.OWNER))
             get("/classroom/:id", ::classroom, setOf(UserRole.USER))
-            get("/all", ::all, setOf(UserRole.MANAGER, UserRole.OWNER))
+            get("/user/:id", ::user, setOf(UserRole.USER))
+            get("/all", ::all, setOf(UserRole.MANAGER, UserRole.OWNER, UserRole.USER))
             get("/unapproved", ::unapproved, setOf(UserRole.MANAGER, UserRole.OWNER))
         }
     }
@@ -53,6 +56,15 @@ class AppointmentController : EndpointGroup {
     }
 
     @OpenApi(
+        requestBody = OpenApiRequestBody([OpenApiContent(Appointment::class)]),
+        responses = [OpenApiResponse("200", [OpenApiContent(Appointment::class)])],
+        description = "Cancels approved appointment"
+    )
+    private fun cancel(ctx: Context) {
+        ctx.json(appointmentService.cancel(ctx.bodyValidator(Appointment::class.java).get()))
+    }
+
+    @OpenApi(
         requestBody = OpenApiRequestBody([OpenApiContent(AppointmentMoveRequest::class)]),
         responses = [OpenApiResponse("200", [OpenApiContent(Appointment::class)])],
         description = "Move appointment to another date and time if its conflicting with other"
@@ -66,7 +78,7 @@ class AppointmentController : EndpointGroup {
         description = "Returns list of all future appointments"
     )
     private fun ongoing(ctx: Context) {
-        ctx.json(appointmentService.getOngoing())
+        ctx.json(appointmentService.getOngoing(ctx.selectedGroup()!!.group))
     }
 
     @OpenApi(
@@ -75,7 +87,16 @@ class AppointmentController : EndpointGroup {
         description = "Returns list of all future appointments for classroom"
     )
     private fun classroom(ctx: Context) {
-        ctx.json(appointmentService.getOngoingByClassroom(ctx.pathParam<Int>("id").get()))
+        ctx.json(appointmentService.getOngoingByClassroom(ctx.pathParam<Int>("id").get(), ctx.selectedGroup()!!.group))
+    }
+
+    @OpenApi(
+        queryParams = [OpenApiParam("id", Int::class, "User id")],
+        responses = [OpenApiResponse("200", [OpenApiContent(Appointment::class, true)])],
+        description = "Returns list of all future appointments for user"
+    )
+    private fun user(ctx: Context) {
+        ctx.json(appointmentService.getOngoingByUser(ctx.pathParam<Int>("id").get(), ctx.selectedGroup()!!.group))
     }
 
 
@@ -84,7 +105,16 @@ class AppointmentController : EndpointGroup {
         description = "Returns list of all appointments"
     )
     private fun all(ctx: Context) {
-        ctx.json(appointmentService.getAll())
+        ctx.selectedGroup()!!.let {
+            ctx.json(
+                when (it.role) {
+                    UserRole.OWNER -> appointmentService.getAll(it.group)
+                    UserRole.MANAGER -> appointmentService.getOngoing(it.group)
+                    UserRole.USER -> appointmentService.getOngoingByUser(it.user.id, it.group)
+                    else -> throw Exception()
+                }
+            )
+        }
     }
 
     @OpenApi(

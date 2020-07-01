@@ -23,7 +23,7 @@ class ClassroomController : EndpointGroup {
             post("/add", ::add, setOf(UserRole.OWNER))
             post("/remove", ::remove, setOf(UserRole.OWNER))
             post("/update", ::update, setOf(UserRole.OWNER))
-            get("/all", ::all, setOf(UserRole.OWNER))
+            get("/all", ::all, setOf(UserRole.OWNER, UserRole.MANAGER, UserRole.USER))
         }
     }
 

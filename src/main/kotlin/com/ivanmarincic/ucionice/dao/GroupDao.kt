@@ -12,13 +12,4 @@ class GroupDao(connectionSource: ConnectionSource) : BaseDaoImpl<Group, Int>(con
 
     private val groupUserDao: GroupUserDao = DaoManager.createDao(Application.connectionSource, GroupUser::class.java)
 
-    fun allForUser(user: User): List<Group> {
-        val groupUsers = groupUserDao
-            .queryBuilder()
-        groupUsers.where()
-            .eq("user_id", user.id)
-        return queryBuilder()
-            .join(groupUsers)
-            .query()
-    }
 }

@@ -3,9 +3,11 @@ package com.ivanmarincic.ucionice.controller
 import com.ivanmarincic.ucionice.UserRole
 import com.ivanmarincic.ucionice.model.AuthenticationRequest
 import com.ivanmarincic.ucionice.model.AuthenticationResponse
-import com.ivanmarincic.ucionice.model.Group
 import com.ivanmarincic.ucionice.model.User
 import com.ivanmarincic.ucionice.service.UsersService
+import com.ivanmarincic.ucionice.util.authenticatedUser
+import com.ivanmarincic.ucionice.util.exceptions.AuthenticationFailedException
+import com.ivanmarincic.ucionice.util.exceptions.AuthorizationFailedException
 import io.javalin.apibuilder.ApiBuilder.path
 import io.javalin.apibuilder.ApiBuilder.post
 import io.javalin.apibuilder.EndpointGroup
@@ -61,6 +63,8 @@ class AuthenticationController : EndpointGroup {
         description = "Validates access token"
     )
     private fun validate(ctx: Context) {
-        ctx.status(200)
+        ctx.authenticatedUser()?.let {
+            ctx.json(it)
+        } ?: throw AuthorizationFailedException()
     }
 }
