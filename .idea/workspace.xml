@@ -24,7 +24,82 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc8d857-a260-44de-b47b-83172bdc1796" name="Default Changelist" comment="dokumentacija" />
+    <list default="true" id="7cc8d857-a260-44de-b47b-83172bdc1796" name="Default Changelist" comment="dokumentacija final">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/ResponseMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e2c6a624-64dd-4756-8108-c1a5ceda519a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e2c6a624-64dd-4756-8108-c1a5ceda519a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/AppointmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/AppointmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/ClassroomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/ClassroomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/GroupSettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/controller/GroupSettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/dao/AppointmentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/dao/AppointmentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$approve$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$cancel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$getAll$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$getOngoing$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$getOngoingByClassroom$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$getOngoingByUser$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$getUnapproved$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$move$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService$request$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/AppointmentsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/ClassroomsService$add$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/ClassroomsService$getByGroup$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/ClassroomsService$remove$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/ClassroomsService$update$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/ClassroomsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/ClassroomsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/GroupSettingsService$get$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/GroupSettingsService$update$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/GroupSettingsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/GroupSettingsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/UsersService$register$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/ivanmarincic/ucionice/service/UsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/counters.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/AppointmentController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/AppointmentController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/ClassroomController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/controller/ClassroomController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/AppointmentDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/AppointmentDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/Appointment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/model/Appointment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/AppointmentsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/AppointmentsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/ClassroomsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/ClassroomsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/GroupSettingsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/GroupSettingsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/UsersService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/service/UsersService.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +196,7 @@
       <recent name="F:\Workspace\Kotlin\ucionice" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.com.ivanmarincic.ucionice.ApplicationKt">
+  <component name="RunManager" selected="Gradle.Build">
     <configuration name="Build" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -277,7 +352,10 @@
       <workItem from="1593345023801" duration="6959000" />
       <workItem from="1593539733109" duration="1105000" />
       <workItem from="1593548256786" duration="5595000" />
-      <workItem from="1593609836071" duration="3403000" />
+      <workItem from="1593609836071" duration="4969000" />
+      <workItem from="1593616759179" duration="595000" />
+      <workItem from="1593680004276" duration="298000" />
+      <workItem from="1593711514528" duration="7026000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1581072754676</created>
@@ -314,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593613306040</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dokumentacija final">
+      <created>1593613569325</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593613569325</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,13 +422,18 @@
     <MESSAGE value="fixes" />
     <MESSAGE value="release" />
     <MESSAGE value="dokumentacija" />
-    <option name="LAST_COMMIT_MESSAGE" value="dokumentacija" />
+    <MESSAGE value="dokumentacija final" />
+    <option name="LAST_COMMIT_MESSAGE" value="dokumentacija final" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="715" y="226" width="725" height="587" key="#xdebugger.evaluate" timestamp="1593555031426">
+    <state x="613" y="360" width="791" height="291" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1593716302266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="715" y="226" width="725" height="587" key="#xdebugger.evaluate/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593555031426" />
+    <state x="613" y="360" width="791" height="291" key="#com.intellij.debugger.actions.ViewTextAction/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593716302266" />
+    <state x="691" y="322" width="1063" height="587" key="#xdebugger.evaluate" timestamp="1593721393658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="691" y="322" width="1063" height="587" key="#xdebugger.evaluate/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721393658" />
     <state width="428" height="466" key="DebuggerActiveHint" timestamp="1587067431640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -352,62 +442,85 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1588099809113" />
-    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593613312853">
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1593613574244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593613312853" />
-    <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1593612353824">
+    <state x="820" y="431" key="Github.Dialog.Accounts.Choose/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593613574244" />
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom" timestamp="1593721996071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
-    <state width="1877" height="344" key="GridCell.Tab.0.center" timestamp="1593612353824">
+    <state width="1877" height="344" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996071" />
+    <state width="1877" height="344" key="GridCell.Tab.0.center" timestamp="1593721996071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
-    <state width="1877" height="344" key="GridCell.Tab.0.left" timestamp="1593612353824">
+    <state width="1877" height="344" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996071" />
+    <state width="1877" height="344" key="GridCell.Tab.0.left" timestamp="1593721996071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
-    <state width="1877" height="344" key="GridCell.Tab.0.right" timestamp="1593612353824">
+    <state width="1877" height="344" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996071" />
+    <state width="1877" height="344" key="GridCell.Tab.0.right" timestamp="1593721996071">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1593612353825">
+    <state width="1877" height="344" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996071" />
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom" timestamp="1593721996072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
-    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1593612353825">
+    <state width="1877" height="344" key="GridCell.Tab.1.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996072" />
+    <state width="1877" height="344" key="GridCell.Tab.1.center" timestamp="1593721996072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
-    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1593612353824">
+    <state width="1877" height="344" key="GridCell.Tab.1.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996072" />
+    <state width="1877" height="344" key="GridCell.Tab.1.left" timestamp="1593721996072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353824" />
-    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1593612353825">
+    <state width="1877" height="344" key="GridCell.Tab.1.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996072" />
+    <state width="1877" height="344" key="GridCell.Tab.1.right" timestamp="1593721996072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593612353825" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593613308428">
+    <state width="1877" height="344" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721996072" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593613570852">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593613308428" />
-    <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1587066367939">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593613570852" />
+    <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1593720456425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1587066367939" />
+    <state x="826" y="407" width="316" height="245" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593720456425" />
+    <state x="846" y="407" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog" timestamp="1593716414932">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="846" y="407" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$MyDatabaseScriptDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593716414932" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1593289911416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593289911416" />
-    <state x="667" y="255" width="585" height="530" key="find.popup" timestamp="1592413232086">
+    <state x="803" y="288" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1593720469089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="255" width="585" height="530" key="find.popup/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1592413232086" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1593551626624">
+    <state x="803" y="288" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593720469089" />
+    <state x="667" y="255" width="585" height="530" key="find.popup" timestamp="1593614830384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593551626624" />
+    <state x="667" y="255" width="585" height="530" key="find.popup/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593614830384" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1593615455193">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593615455193" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593721190647">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1593721190647" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/ivanmarincic/ucionice/dao/AppointmentDao.kt</url>
+          <line>77</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

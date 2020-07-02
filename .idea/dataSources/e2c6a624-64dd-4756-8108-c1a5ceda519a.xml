@@ -37,11 +37,11 @@
     </column>
     <column id="17" parent="6" name="start_date">
       <Position>4</Position>
-      <DataType>TIMESTAMP|0s</DataType>
+      <DataType>VARCHAR|0s</DataType>
     </column>
     <column id="18" parent="6" name="end_date">
       <Position>5</Position>
-      <DataType>TIMESTAMP|0s</DataType>
+      <DataType>VARCHAR|0s</DataType>
     </column>
     <column id="19" parent="6" name="approved">
       <Position>6</Position>

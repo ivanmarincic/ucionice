@@ -10,7 +10,6 @@ import com.ivanmarincic.ucionice.model.*
 import com.ivanmarincic.ucionice.util.exceptions.AuthenticationFailedException
 import com.ivanmarincic.ucionice.util.exceptions.AuthorizationFailedException
 import com.ivanmarincic.ucionice.util.exceptions.UserExistsException
-import com.ivanmarincic.ucionice.util.futureOf
 import com.ivanmarincic.ucionice.util.hashPassword
 import com.ivanmarincic.ucionice.util.validatePassword
 import com.j256.ormlite.dao.DaoManager
@@ -19,8 +18,6 @@ import java.sql.SQLException
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 import java.util.*
-import java.util.concurrent.CompletableFuture
-import java.util.function.Supplier
 
 class UsersService {
     private val usersDao: UsersDao = DaoManager.createDao(Application.connectionSource, User::class.java)
@@ -61,18 +58,16 @@ class UsersService {
         } ?: throw AuthenticationFailedException()
     }
 
-    fun register(user: User): CompletableFuture<User> {
-        return futureOf(Supplier {
-            user.password = hashPassword(user.password)
-            try {
-                usersDao.create(user)
-            } catch (e: SQLException) {
-                (e.cause as? SQLiteException)?.let {
-                    if (it.resultCode.code == 19) throw UserExistsException(user.email)
-                } ?: throw e
-            }
-            user
-        })
+    fun register(user: User): User {
+        user.password = hashPassword(user.password)
+        try {
+            usersDao.create(user)
+        } catch (e: SQLException) {
+            (e.cause as? SQLiteException)?.let {
+                if (it.resultCode.code == 19) throw UserExistsException(user.email)
+            } ?: throw e
+        }
+        return user
     }
 
     fun authorize(token: String): User {

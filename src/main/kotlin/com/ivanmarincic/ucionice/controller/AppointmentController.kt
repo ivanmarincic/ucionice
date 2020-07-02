@@ -52,7 +52,11 @@ class AppointmentController : EndpointGroup {
         description = "Approves appointment request"
     )
     private fun approve(ctx: Context) {
-        ctx.json(appointmentService.approve(ctx.bodyValidator(Appointment::class.java).get()))
+        ctx.json(
+            appointmentService.approve(
+                ctx.bodyValidator(Appointment::class.java).get()
+            )
+        )
     }
 
     @OpenApi(
@@ -70,7 +74,11 @@ class AppointmentController : EndpointGroup {
         description = "Move appointment to another date and time if its conflicting with other"
     )
     private fun move(ctx: Context) {
-        ctx.json(appointmentService.move(ctx.bodyValidator(AppointmentMoveRequest::class.java).get()))
+        ctx.json(
+            appointmentService.move(
+                ctx.bodyValidator(AppointmentMoveRequest::class.java).get()
+            )
+        )
     }
 
     @OpenApi(
@@ -87,7 +95,7 @@ class AppointmentController : EndpointGroup {
         description = "Returns list of all future appointments for classroom"
     )
     private fun classroom(ctx: Context) {
-        ctx.json(appointmentService.getOngoingByClassroom(ctx.pathParam<Int>("id").get(), ctx.selectedGroup()!!.group))
+        ctx.json(appointmentService.getOngoingByClassroom(ctx.pathParam<Int>("id").get()))
     }
 
     @OpenApi(
@@ -122,6 +130,6 @@ class AppointmentController : EndpointGroup {
         description = "Returns list of all appointments that need approval"
     )
     private fun unapproved(ctx: Context) {
-        ctx.json(appointmentService.getUnapproved())
+        ctx.json(appointmentService.getUnapproved(ctx.selectedGroup()!!.group))
     }
 }

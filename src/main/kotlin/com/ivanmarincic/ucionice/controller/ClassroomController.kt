@@ -43,7 +43,11 @@ class ClassroomController : EndpointGroup {
         description = "Removes existing classroom"
     )
     private fun remove(ctx: Context) {
-        ctx.result(classroomService.remove(ctx.bodyValidator(Classroom::class.java).get()))
+        if (classroomService.remove(ctx.bodyValidator(Classroom::class.java).get())) {
+            ctx.status(200)
+        } else {
+            ctx.status(400)
+        }
     }
 
     @OpenApi(

@@ -5,121 +5,73 @@ import com.ivanmarincic.ucionice.dao.AppointmentDao
 import com.ivanmarincic.ucionice.dao.ClassroomDao
 import com.ivanmarincic.ucionice.model.*
 import com.ivanmarincic.ucionice.util.exceptions.ConflictingAppointmentsException
-import com.ivanmarincic.ucionice.util.futureOf
 import com.j256.ormlite.dao.DaoManager
-import java.util.*
-import java.util.concurrent.CompletableFuture
-import java.util.function.Supplier
 
 class AppointmentsService {
-    private val appointmentDao: AppointmentDao =
-        DaoManager.createDao(Application.connectionSource, Appointment::class.java)
     private val classroomDao: ClassroomDao =
         DaoManager.createDao(Application.connectionSource, Classroom::class.java)
+    private val appointmentDao: AppointmentDao =
+        DaoManager.createDao(Application.connectionSource, Appointment::class.java)
 
-    fun getUnapproved(): CompletableFuture<List<Appointment>> {
-        return futureOf(Supplier {
-            appointmentDao.getUnapproved()
-        })
+    init {
+        appointmentDao.classroomDao = classroomDao
     }
 
-    fun request(appointmentRequest: AppointmentRequest, user: User): CompletableFuture<Appointment> {
-        return futureOf(Supplier {
-            val appointment = Appointment(
-                classroom = appointmentRequest.classroom,
-                startDate = appointmentRequest.startDate,
-                endDate = appointmentRequest.endDate,
-                user = user
+    fun getUnapproved(group: Group): List<Appointment> {
+        return appointmentDao.getUnapproved(group.id)
+    }
+
+    fun request(appointmentRequest: AppointmentRequest, user: User): Appointment {
+        val appointment = Appointment(
+            classroom = appointmentRequest.classroom,
+            startDate = appointmentRequest.startDate,
+            endDate = appointmentRequest.endDate,
+            user = user
+        )
+        return appointmentDao.request(appointment)
+    }
+
+    fun approve(appointment: Appointment): Appointment {
+        if (!appointmentDao.hasConflictingAppointments(
+                appointment.startDate,
+                appointment.endDate,
+                appointment.classroom.id
             )
-            appointmentDao.request(appointment)
-        })
+        ) {
+            return appointmentDao.approve(appointment)
+        } else {
+            throw ConflictingAppointmentsException()
+        }
     }
 
-    fun approve(appointment: Appointment): CompletableFuture<Appointment> {
-        return futureOf(Supplier {
-            appointmentDao.approve(appointment)
-        })
+    fun cancel(appointment: Appointment): Appointment {
+        return appointmentDao.cancel(appointment)
     }
 
-    fun cancel(appointment: Appointment): CompletableFuture<Appointment> {
-        return futureOf(Supplier {
-            appointmentDao.cancel(appointment)
-        })
+    fun move(appointmentMoveRequest: AppointmentMoveRequest): Appointment {
+        val appointment = appointmentMoveRequest.appointment
+        if (!appointment.approved) {
+            appointment.startDate = appointmentMoveRequest.startDate
+            appointment.endDate = appointmentMoveRequest.endDate
+            appointmentDao.update(appointment)
+            return appointment
+        }
+        throw ConflictingAppointmentsException()
     }
 
-    fun move(appointmentMoveRequest: AppointmentMoveRequest): CompletableFuture<Appointment> {
-        return futureOf(Supplier {
-            if (appointmentDao.getConflictingAppointments(
-                    appointmentMoveRequest.startDate,
-                    appointmentMoveRequest.endDate
-                ).isEmpty()
-            ) {
-                val appointment = appointmentMoveRequest.appointment
-                appointment.startDate = appointmentMoveRequest.startDate
-                appointment.endDate = appointmentMoveRequest.endDate
-                appointmentDao.update(appointment)
-                appointment
-            } else {
-                throw ConflictingAppointmentsException()
-            }
-        })
+    fun getOngoing(group: Group): List<Appointment> {
+        return appointmentDao.getOngoing(group.id)
     }
 
-    fun getOngoing(group: Group): CompletableFuture<List<Appointment>> {
-        return futureOf(Supplier {
-            val now = Date()
-            val classroomJoin = classroomDao.queryBuilder()
-            classroomJoin.where().eq("group_id", group.id)
-            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
-            query
-                .orderBy("start_date", true)
-                .where()
-                .eq("approved" , true)
-                .and()
-                .ge("start_date", now)
-                .or()
-                .ge("end_date", now)
-                .query()
-        })
+    fun getAll(group: Group): List<Appointment> {
+        return appointmentDao.queryForAll(group.id)
     }
 
-    fun getAll(group: Group): CompletableFuture<List<Appointment>> {
-        return futureOf(Supplier {
-            val classroomJoin = classroomDao.queryBuilder()
-            classroomJoin.where().eq("group_id", group.id)
-            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
-            query.query()
-        })
+    fun getOngoingByClassroom(classroom: Int): List<Appointment> {
+        return appointmentDao.getOngoingByClassroom(classroom)
     }
 
-    fun getOngoingByClassroom(classroom: Int, group: Group): CompletableFuture<List<Appointment>> {
-        return futureOf(Supplier {
-            val now = Date()
-            val classroomJoin = classroomDao.queryBuilder()
-            classroomJoin.where().eq("group_id", group.id)
-            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
-            query.orderBy("start_date", true)
-                .where()
-                .ge("start_date", now)
-                .and()
-                .eq("classroom_id", classroom)
-                .query()
-        })
-    }
-
-    fun getOngoingByUser(user: Int, group: Group): CompletableFuture<List<Appointment>> {
-        return futureOf(Supplier {
-            val now = Date()
-            val classroomJoin = classroomDao.queryBuilder()
-            classroomJoin.where().eq("group_id", group.id)
-            val query = appointmentDao.queryBuilder().leftJoin(classroomJoin)
-            query
-                .orderBy("start_date", true)
-                .where()
-                .ge("start_date", now)
-                .and()
-                .eq("user_id", user)
-                .query()
-        })
+    fun getOngoingByUser(user: Int, group: Group): List<Appointment> {
+        return appointmentDao.getOngoingByUser(user, group.id)
     }
 }

@@ -8,22 +8,42 @@ import java.util.*
 class AppointmentDao(connectionSource: ConnectionSource) :
     BaseDaoImpl<Appointment, Int>(connectionSource, Appointment::class.java) {
 
-    fun getUnapproved(): List<Appointment> {
+    lateinit var classroomDao: ClassroomDao
+
+    fun queryForAll(group: Int): List<Appointment> {
+        val classroomQuery = classroomDao.queryBuilder()
+        classroomQuery.where().eq("group_id", group)
         return queryBuilder()
-            .orderBy("start_date", true)
-            .where()
-            .eq("approved", false)
+            .join(classroomQuery)
             .query()
+
     }
 
-    fun getOngoing(): List<Appointment> {
+    fun getUnapproved(group: Int): List<Appointment> {
         val now = Date()
+        val classroomQuery = classroomDao.queryBuilder()
+        classroomQuery.where().eq("group_id", group)
         return queryBuilder()
+            .join(classroomQuery)
             .orderBy("start_date", true)
             .where()
             .ge("start_date", now)
-            .or()
-            .ge("end_date", now)
+            .and()
+            .eq("approved", true)
+            .query()
+    }
+
+    fun getOngoing(group: Int): List<Appointment> {
+        val now = Date()
+        val classroomQuery = classroomDao.queryBuilder()
+        classroomQuery.where().eq("group_id", group)
+        return queryBuilder()
+            .join(classroomQuery)
+            .orderBy("start_date", true)
+            .where()
+            .ge("start_date", now)
+            .and()
+            .eq("approved", true)
             .query()
     }
 
@@ -34,13 +54,18 @@ class AppointmentDao(connectionSource: ConnectionSource) :
             .where()
             .ge("start_date", now)
             .and()
+            .eq("approved", true)
+            .and()
             .eq("classroom_id", classroom)
             .query()
     }
 
-    fun getOngoingByUser(user: Int): List<Appointment> {
+    fun getOngoingByUser(user: Int, group: Int): List<Appointment> {
         val now = Date()
+        val classroomQuery = classroomDao.queryBuilder()
+        classroomQuery.where().eq("group_id", group)
         return queryBuilder()
+            .join(classroomQuery)
             .orderBy("start_date", true)
             .where()
             .ge("start_date", now)
@@ -49,19 +74,22 @@ class AppointmentDao(connectionSource: ConnectionSource) :
             .query()
     }
 
-    fun getConflictingAppointments(startDate: Date, endDate: Date): List<Appointment> {
+    fun hasConflictingAppointments(startDate: Date, endDate: Date, classroom: Int): Boolean {
         val query = queryBuilder()
             .orderBy("start_date", true)
         val where = query.where()
-        where.eq("approved", true)
-        where.and(
-            where,
-            where.or(
-                where.ge("start_date", startDate).and().le("end_date", endDate),
-                where.ge("start_date", endDate).and().le("end_date", endDate)
+        where
+            .eq("approved", true)
+            .and()
+            .eq("classroom_id", classroom)
+            .and(
+                where,
+                where.or(
+                    where.le("start_date", startDate).and().ge("end_date", startDate),
+                    where.le("start_date", endDate).and().ge("end_date", endDate)
+                )
             )
-        )
-        return query.query()
+        return query.countOf() > 0
     }
 
     fun request(appointment: Appointment): Appointment {

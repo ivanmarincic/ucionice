@@ -113,7 +113,9 @@ fun getOpenApiPluginOptions(): OpenApiOptions {
 
 fun main(args: Array<String>) {
     setupDatabase()
-    JavalinJackson.configure(ObjectMapper().registerModule(KotlinModule()).setDateFormat(SimpleDateFormat("yyyy-MM-dd HH:mm")))
+    JavalinJackson.configure(
+        ObjectMapper().registerModule(KotlinModule()).setDateFormat(SimpleDateFormat("yyyy-MM-dd HH:mm"))
+    )
     Javalin
         .create {
             it.accessManager(::authorizeRequest)
@@ -131,26 +133,27 @@ fun main(args: Array<String>) {
             GroupSettingsController()
         )
         .exception(AuthenticationFailedException::class.java) { _, ctx ->
-            ctx.status(HttpStatus.BAD_REQUEST_400).result("Authentication failed")
+            ctx.status(HttpStatus.BAD_REQUEST_400).json(ResponseMessage("Greša prilikom autentikacije"))
         }
         .exception(AuthorizationFailedException::class.java) { _, ctx ->
-            ctx.status(HttpStatus.UNAUTHORIZED_401).result("Unauthorized")
+            ctx.status(HttpStatus.UNAUTHORIZED_401).json(ResponseMessage("Unauthorized"))
         }
         .exception(TokenExpiredException::class.java) { _, ctx ->
-            ctx.status(HttpStatus.UNAUTHORIZED_401).result("Token has expired, please login again")
+            ctx.status(HttpStatus.UNAUTHORIZED_401).json(ResponseMessage("Token je istekao, prijavite se ponovno"))
         }
         .exception(UserExistsException::class.java) { e, ctx ->
-            ctx.status(HttpStatus.BAD_REQUEST_400).result("User with email ${e.email} already exists")
+            ctx.status(HttpStatus.BAD_REQUEST_400).json(ResponseMessage("Korisnik sa email adresom ${e.email} već postoji"))
         }
         .exception(GroupAuthorizationFailedException::class.java) { e, ctx ->
-            ctx.status(HttpStatus.BAD_REQUEST_400).result("User doesn't have access to this group")
+            ctx.status(HttpStatus.BAD_REQUEST_400).json(ResponseMessage("Korisnik nema prisup ovoj grupi"))
         }
         .exception(RoleAuthorizationFailedException::class.java) { e, ctx ->
-            ctx.status(HttpStatus.BAD_REQUEST_400).result("User doesn't have sufficient role to access this route")
+            ctx.status(HttpStatus.BAD_REQUEST_400)
+                .json(ResponseMessage("Korisnik nema dovoljno prava da bi pristupio ovom resursu"))
         }
         .exception(ConflictingAppointmentsException::class.java) { e, ctx ->
             ctx.status(HttpStatus.BAD_REQUEST_400)
-                .result("Appointment conflicts with other already approved appointments")
+                .json(ResponseMessage("Događaj se poklapa sa postojećim događajem"))
         }
         .start(5005)
 }
